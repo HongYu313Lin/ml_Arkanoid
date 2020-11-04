@@ -89,7 +89,8 @@ class MLPlay:
             if points[index][2]=='bricks':
                 bricks.remove(bricks[points[index][3]])
             elif points[index][2]=='hard_bricks':
-                if speed[0]*speed[0]+speed[1]*speed[1]>49:
+                sp = speed[0] * speed[0] + speed[1] * speed[1]
+                if sp <= 49*2:
                     bricks.append((hard_bricks[points[index][3]]))
                     hard_bricks.remove((hard_bricks[points[index][3]]))
                 else:
